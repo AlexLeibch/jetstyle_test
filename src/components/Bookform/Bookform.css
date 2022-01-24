@@ -1,31 +1,84 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    max-width: 1024px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #d8d8d8;
+  color: #8e6e53;
 }
 
 .form__label {
-    align-self: flex-start;
-    margin-bottom: 5px;
-    margin-top: 5px;
+  align-self: flex-start;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .form__input {
-    display: inline-block;
-    padding: 4px;
-    margin-bottom: 4px;
-
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  padding: 4px;
+  margin-bottom: 4px;
+}
+.form__wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.form__button {
+  padding: 5px 15px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 5px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: content-box;
+  background-color: white;
 }
 
-.form__button {
-    padding: 5px 15px;
-    color: teal;
-    cursor: pointer;
-    align-self: flex-start;
-    margin-top: 5px;
-    border-radius: 5px;
-    outline: none;
-    background-color: rgb(0, 0 ,0 ,0);
-    box-sizing: content-box;
+.form__button-file {
+  padding: 5px 15px;
+  color: teal;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-top: 5px;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: content-box;
+}
 
+input[type="file"] {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+input[type="file"] + .form__label_files {
+  font-family: "Roboto" sans-serif;
+  color: black;
+  margin-left: 5px;
+  align-self: baseline;
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 3px 15px;
+  transition: opacity 1;
+  border-color: black;
+  background-color: white;
+}
+
+.form__label_files:hover {
+  opacity: 0.4;
+  cursor: pointer;
+}
+.form__button:hover {
+  transform: scale(0.9);
+}
+
+.form__button[disabled] {
+  transform: none;
+  background-color: rgb(223, 213, 213);
 }

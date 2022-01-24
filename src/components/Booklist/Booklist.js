@@ -1,34 +1,39 @@
 import React from "react";
 import Bookitem from "../Bookitem/Bookitem";
+import "./Booklist.css";
 function Booklist({
   books,
   remove,
   setEditBook,
   setEditTextBook,
   editBook,
-  updateBook,
+  changeBook,
   handleEditTitleBook,
-  handleEditAuthorBook
+  handleEditAuthorBook,
+  cover,
 }) {
   return (
-    <section className="booklist">
-      <h1>Каталог книг</h1>
-      {books.map((book) => (
-        <Bookitem
-          updateBook={updateBook}
-          editBook={editBook}
-          remove={remove}
-          setEditTextBook={setEditTextBook}
-          author={book.author}
-          setEditBook={setEditBook}
-          title={book.title}
-          key={book.id}
-          book={book}
-          handleEditAuthorBook={handleEditAuthorBook}
-          handleEditTitleBook={handleEditTitleBook}
-        />
-      ))}
-    </section>
+    <>
+      <h1 className="booklist__title">Каталог книг</h1>
+      <section className="booklist__section">
+        {books.map((book) => (
+          <Bookitem
+            changeBook={changeBook}
+            editBook={editBook}
+            remove={remove}
+            setEditTextBook={setEditTextBook}
+            author={book.author}
+            setEditBook={setEditBook}
+            title={book.title}
+            key={book.id}
+            book={book}
+            handleEditAuthorBook={handleEditAuthorBook}
+            handleEditTitleBook={handleEditTitleBook}
+            cover={cover}
+          />
+        ))}
+      </section>
+    </>
   );
 }
 
